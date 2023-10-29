@@ -1,0 +1,31 @@
+@mixin appearFromAbove {
+  animation-name: appearOnLoad;
+  animation-duration: 1s;
+  @keyframes appearOnLoad {
+    0% {
+      opacity: 0;
+      transform: translateY(-30%);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+}
+
+@mixin appearFromMiddle {
+  animation-name: appearFromMiddle;
+  animation-duration: 0.5s;
+  animation-timing-function: linear;
+  animation-fill-mode: forwards;
+  @keyframes appearFromMiddle {
+    0% {
+      width: 0;
+      opacity: 0;
+    }
+    100% {
+      width: 280px;
+      opacity: 1;
+    }
+  }
+}
