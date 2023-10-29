@@ -1,0 +1,47 @@
+.welcome {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100vw;
+  height: 100vh;
+  text-align: center;
+
+  &__h1 {
+    border-top: 1px solid #535370;
+    font-size: 2.5rem;
+  }
+
+  &__description {
+    padding: 1rem 2rem;
+    font-size: 1.15rem;
+    border-bottom: 1px solid #535370;
+  }
+
+  &__h1, &__description {
+    display: block;
+    margin: 0 auto;
+    width: 80%;
+  }
+
+  &__animation {
+    width: 300px;
+  }
+
+  &__button {
+    width: 18rem;
+    height: 6rem;
+    margin: 1rem;
+    border: none;
+    border-radius: 8px;
+    background-color: $main;
+    color: white;
+    font-size: 2rem;
+    transition: color 0.3s, background-color 0.3s;
+
+    &:hover {
+      color: $main;
+      border: 3px solid $main;
+      background-color: transparent;
+    }
+  }
+}

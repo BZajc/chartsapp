@@ -1,0 +1,18 @@
+@import "./components/_general";
+@import "./components/_colors";
+@import "./components/WelcomePage.scss";
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Karla', sans-serif;
+}
+
+html {
+  font-size: 62.5%;
+}
