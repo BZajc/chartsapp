@@ -7,6 +7,10 @@ function App() {
 
     const handleStateChange = (data) => {
         setShow(data)
+        // Displaying MainPage component with small delay
+        setTimeout(() => {
+          document.querySelector('.main').classList.add('appear')
+        }, 300);
     }
 
   return (
@@ -18,24 +22,3 @@ function App() {
 }
 
 export default App;
-
-// import { useState } from "react";
-// import WelcomePage from "./pages/WelcomePage";
-// import MainPage from "./pages/MainPage";
-
-// function App() {
-//     const [show, setShow] = useState(false)
-
-//     const handleStateChange = (data) => {
-//         setShow(data)
-//     }
-
-//   return (
-//     <div>
-//       <WelcomePage handleStateChange={handleStateChange}/>
-//       {show && <MainPage />}
-//     </div>
-//   );
-// }
-
-// export default App;

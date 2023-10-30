@@ -3,6 +3,8 @@
   align-items: center;
   justify-content: center;
   flex-direction: column;
+  opacity: 0;
+  transition: opacity 1s;
   &__github {
     position: absolute;
     left: 0;
@@ -21,7 +23,7 @@
     height: 6rem;
     margin: 1rem;
     border-radius: 8px;
-    background-color: rgba(255, 255, 255, 0.5);
+    background-color: $lightBg;
     transition: background-color 0.3s;
 
     &::before {
@@ -61,11 +63,13 @@
     width: 50px;
   }
 
-  &__random-text {
-    font-size: 1.5rem;
-  }
-
   &__h2 {
+    font-size: 1.75em;
     padding: 1rem;
+    border-bottom: 1px solid #535370;
   }
+}
+
+.appear {
+  opacity: 1;
 }
