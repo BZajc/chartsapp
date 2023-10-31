@@ -1,22 +1,18 @@
-import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import chartsLogo from "../img/chartsLogo.svg";
 import Lottie from "lottie-react";
 import welcome from "../lottie/welcome.json";
 import { AiFillGithub } from "react-icons/ai";
 
-function WelcomePage({ handleStateChange }) {
-  const [isVisible, setIsVisible] = useState(true);
+function WelcomePage() {
+  const navigate = useNavigate()
 
   const handleClick = () => {
-    setIsVisible(false);
-    setTimeout(() => {
-      document.querySelector(".welcome").classList.add("remove");
-      handleStateChange(isVisible);
-    }, 300);
-  };
+    navigate("/main")
+  }
 
   return (
-    <div className={`welcome ${isVisible ? "" : "hidden"}`}>
+    <div className={`welcome`}>
       <div>
         <img
           src={chartsLogo}
@@ -38,7 +34,7 @@ function WelcomePage({ handleStateChange }) {
         </div>
       </div>
       <p className="welcome__created-with">
-        App has been created with: React, Redux, JSON-server, Lottie, Chart.js
+        App has been created with: React, Redux, JSON-server, Lottie, Recharts
       </p>
       <div>
         <button className={"welcome__button button"} onClick={handleClick}>

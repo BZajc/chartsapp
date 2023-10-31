@@ -9,7 +9,7 @@
   gap: 10px;
   overflow: hidden;
   overflow-x: auto;
-
+  scroll-behavior: smooth;
   &__chart {
     position: relative;
     display: flex;
@@ -35,6 +35,7 @@
     font-weight: bold;
     font-size: 1.25rem;
     border-bottom: 1px solid black;
+    user-select: none;
   }
 
   &__chart-animation--3 {

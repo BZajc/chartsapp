@@ -4,6 +4,7 @@
 @import "./components/WelcomePage.scss";
 @import "./components/MainPage.scss";
 @import "./components/ChartSelection.scss";
+@import "./components/ChartCreatorPage.scss";
 *,
 *::before,
 *::after {
@@ -14,12 +15,12 @@
 
 body {
   font-family: "Karla", sans-serif;
-
   background-image: url("../img/chartsBgMobile.svg");
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
   background-attachment: fixed;
+  background-color: rgb(222,222,222);
   width: 100%;
   height: 100%;
 }
