@@ -12,7 +12,7 @@ function App() {
         <Routes>
           <Route path="/" element={<WelcomePage />} />
           <Route path="/main" element={<MainPage />} />
-          <Route path="/chart" element={<ChartCreatorPage />} />
+          <Route path="/chartcreator" element={<ChartCreatorPage />} />
         </Routes>
       </Router>
     </Provider>
