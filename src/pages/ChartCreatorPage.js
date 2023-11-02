@@ -1,20 +1,11 @@
-import {
-  Line,
-  LineChart,
-  CartesianGrid,
-  XAxis,
-  YAxis,
-  Tooltip,
-  Legend,
-} from "recharts";
 import { BsFillArrowRightSquareFill } from "react-icons/bs";
+import ManageCharts from "../components/ManageCharts";
+import YourLabels from "../components/YourLabels";
+
 function ChartCreatorPage() {
-  const data = [
-    { name: "data1", value1: 15, value2: 18, value3: 25 },
-    { name: "data2", value1: 19, value2: 45, value3: 42 },
-    { name: "data3", value1: 23, value2: 25, value3: 11 },
-    { name: "data4", value1: 21, value2: 55, value3: 8 },
-  ];
+  const handleSubmit = (e) => {
+    e.preventDefault();
+  };
 
   return (
     <div className="creator">
@@ -30,60 +21,34 @@ function ChartCreatorPage() {
         </button>
       </div>
       <div className="creator__chart-container">
-        <LineChart width={300} height={300} data={data}>
-          <Line
-            type="monotone"
-            dataKey="value1"
-            stroke="#2395af"
-            strokeWidth={3}
-          />
-          <Line
-            type="monotone"
-            dataKey="value2"
-            stroke="#fa590b"
-            strokeWidth={3}
-          />
-          <Line
-            type="monotone"
-            dataKey="value3"
-            stroke="#ab2210"
-            strokeWidth={3}
-          />
-          <CartesianGrid stroke="#ccc" />
-          <XAxis dataKey="name" />
-          <YAxis />
-          <Tooltip />
-          <Legend />
-        </LineChart>
+        <ManageCharts />
       </div>
       <div className="creator__inputs">
         <h3 className="creator__h3">Data</h3>
         <div className="creator__input-container">
-          <input
-            className="creator__input"
-            name="label"
-            placeholder="add label..."
-          />
-          <BsFillArrowRightSquareFill className="creator__input-confirm button" />
-          <label htmlFor="label">Add label</label>
-        </div>
-        <div className="creator__input-container">
-          <input
-            className="creator__input"
-            name="key"
-            placeholder="add key..."
-          />
-          <BsFillArrowRightSquareFill className="creator__input-confirm button" />
-          <label htmlFor="key">Add key</label>
+          <form onSubmit={handleSubmit} className="creator__form">
+            <input
+              className="creator__input"
+              name="label"
+              placeholder="add label..."
+            />
+            <BsFillArrowRightSquareFill className="creator__input-confirm button" />
+            <label htmlFor="label">Add label</label>
+          </form>
         </div>
         <div>
           <h3 className="creator__h3">Your labels</h3>
+          <div className="creator__user-data-container">
+            <YourLabels />
+          </div>
         </div>
         <div>
           <h3 className="creator__h3">Your key-values</h3>
+          <div className="creator__user-data-container"></div>
         </div>
         <div>
           <h3 className="creator__h3">Customization</h3>
+          <div className="creator__user-data-container"></div>
         </div>
       </div>
     </div>
