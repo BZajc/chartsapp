@@ -1,7 +1,6 @@
 .creator {
   display: flex;
   flex-direction: column;
-  height: 100vh;
   width: 100%;
   background-color: $darkerBg;
   &__buttons {
@@ -87,11 +86,20 @@
     font-size: 2.5rem;
     margin-right: 1rem;
     color: $main;
+    transition: color 0.3s;
+
+    &:hover {
+      color: white;
+    }
   }
 
   &__input-delete {
     font-size: 3rem;
+    transition: color 0.3s;
 
+    &:hover {
+      color: white;
+    }
     &--yes {
       color: green;
     }

@@ -1,10 +1,23 @@
+import { useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { addLabel, selectLabels } from "../store/slices/labelSlice";
 import { BsFillArrowRightSquareFill } from "react-icons/bs";
 import ManageCharts from "../components/ManageCharts";
 import YourLabels from "../components/YourLabels";
 
 function ChartCreatorPage() {
+  const [label, setLabel] = useState("");
+  const dispatch = useDispatch();
+  const labels = useSelector(selectLabels);
+
   const handleSubmit = (e) => {
     e.preventDefault();
+    dispatch(addLabel(label));
+    setLabel("");
+  };
+
+  const handleInputChange = (e) => {
+    setLabel(e.target.value);
   };
 
   return (
@@ -31,15 +44,22 @@ function ChartCreatorPage() {
               className="creator__input"
               name="label"
               placeholder="add label..."
+              onChange={handleInputChange}
+              value={label}
             />
-            <BsFillArrowRightSquareFill className="creator__input-confirm button" />
+            <BsFillArrowRightSquareFill
+              className="creator__input-confirm button"
+              onClick={handleSubmit}
+            />
             <label htmlFor="label">Add label</label>
           </form>
         </div>
         <div>
           <h3 className="creator__h3">Your labels</h3>
           <div className="creator__user-data-container">
-            <YourLabels />
+            {labels.map((labelObject) => (
+              <YourLabels key={labelObject.id} id={labelObject.id} />
+            ))}
           </div>
         </div>
         <div>
