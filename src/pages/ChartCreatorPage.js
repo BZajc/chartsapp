@@ -65,7 +65,9 @@ function ChartCreatorPage() {
         <div>
           <h3 className="creator__h3">Your key-values</h3>
           <div className="creator__user-data-container">
-            <YourKeyValues />
+          {labels.map((labelObject) => (
+              <YourKeyValues key={labelObject.id} id={labelObject.id} />
+            ))}
           </div>
         </div>
         <div>

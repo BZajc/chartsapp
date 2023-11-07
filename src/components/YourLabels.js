@@ -14,7 +14,7 @@ function YourLabels({ id }) {
   const labels = useSelector(selectLabels);
   const dispatch = useDispatch();
 
-  // If id of the component is the as label - set label value as value of the input
+  // If id of the component is the same as label - set label value as the value of input
   useEffect(() => {
     const labelObject = labels.find((item) => item.id === id);
     if (labelObject) {
@@ -24,16 +24,11 @@ function YourLabels({ id }) {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-
     dispatch(renameLabel({ id, newLabel: label }));
   };
 
-  // Hide delete buttons after 3s
   const handleClick = () => {
-    setShowDelete(true);
-    setTimeout(() => {
-      setShowDelete(false);
-    }, 3000);
+    setShowDelete(!showDelete);
   };
 
   return (

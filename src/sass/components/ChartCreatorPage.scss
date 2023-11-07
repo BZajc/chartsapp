@@ -114,13 +114,49 @@
     align-items: center;
   }
 
-  &__key-values-container {
+  &__keyvalues {
     display: flex;
-    align-items: center;
+    flex-direction: column;
   }
 
-  &__to {
-    display: block;
-    color: white;
+  &__label-name-box {
+    display: flex;
+    align-items: center;
+    font-size: 2rem;
+    color: $main;
+  }
+
+  &__label-name {
+    padding: 0.2rem 0.2rem 0rem 0.2rem;
+    margin: 10px;
+  }
+
+  &__add-keyvalues {
+    font-size: 2.5rem;
+    transition: color 0.3s;
+
+    &:hover {
+      color: white;
+    }
+  }
+
+  &__keyvalues-inputs-container {
+    border-bottom: 3px solid $darkBg;
+  }
+
+  &__keyvalues-inputs {
+    display: flex;
+  }
+
+  &__keyvalues-input {
+    width: 140px;
+
+    &--value {
+      margin-left: 0;
+    }
+  }
+
+  &__keyvalues-form {
+    display: flex;align-items: center;
   }
 }
