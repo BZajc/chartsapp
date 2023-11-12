@@ -27,16 +27,22 @@ function MainPage() {
       <div>
         <img src={chartsLogo} alt="Charts Logo" className="main__logo logo" />
       </div>
+
+      {/* Tutorial */}
       <div className="main__button-box">
         <button className="main__how-to-button button">How it works</button>
         <Lottie animationData={puzzle} className="main__how-to-animation" />
       </div>
+
+      {/* Chart selection */}
       <h2 className="main__h2">What chart do you want to create?</h2>
       <div className="main__charts">
         <AiOutlineLeft className="main__charts-button main__charts-button--left" onClick={handleScrollLeft}/>
         <ChartSelection />
         <AiOutlineRight className="main__charts-button main__charts-button--right" onClick={handleScrollRight}/>
       </div>
+
+      {/* Download chart from json-server */}
       <button className="main__load-button button">Load charts</button>
     </div>
   );

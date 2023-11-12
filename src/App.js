@@ -13,6 +13,7 @@ function App() {
           <Route path="/" element={<WelcomePage />} />
           <Route path="/main" element={<MainPage />} />
           <Route path="/chartcreator" element={<ChartCreatorPage />} />
+          <Route path="/chartcreator/:chartType" element={<ChartCreatorPage />} />
         </Routes>
       </Router>
     </Provider>

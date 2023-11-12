@@ -24,6 +24,8 @@ function ChartCreatorPage() {
   return (
     <div className="creator">
       <div className="creator__buttons">
+
+        {/* Download/Upload charts from/to json-server */}
         <button className="creator__button creator__button--load button">
           load
         </button>
@@ -33,10 +35,15 @@ function ChartCreatorPage() {
         <button className="creator__button creator__button--back button">
           back
         </button>
+
       </div>
+
+      {/* Display chart */}
       <div className="creator__chart-container">
         <ManageCharts />
       </div>
+
+      {/* Inputs to send data to chart */}
       <div className="creator__inputs">
         <h3 className="creator__h3">Data</h3>
         <div className="creator__input-container">

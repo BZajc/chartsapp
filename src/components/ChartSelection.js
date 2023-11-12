@@ -15,7 +15,7 @@ function ChartSelection() {
 
   const handleClick = (chartType) => {
     dispatch(setSelectedChartType(chartType))
-    navigate("/chartcreator")
+    navigate(`/chartcreator/${chartType}`)
   }
 
   return (
